@@ -63,16 +63,16 @@ public class ArrayList<T> implements ListInterface<T>, Iterable<T>
     }
 
     @Override
-    public boolean contains(Object anEntry)
+    public boolean contains(T anEntry)
     {
         if (anEntry == null)
             return false;
         
         boolean result = false;
         
-        for (Object object : this)
+        for (T elem : this)
         {
-            if (anEntry.equals(object))
+            if (anEntry.equals(elem))
             {
                 result = true;
                 break;
@@ -85,9 +85,9 @@ public class ArrayList<T> implements ListInterface<T>, Iterable<T>
     @Override
     public void display()
     {
-        for (Object object : this)
+        for (T elem : this)
         {
-            System.out.println(object);
+            System.out.println(elem);
         }
     }
 
