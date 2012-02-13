@@ -21,7 +21,7 @@ public class ArrayList<T> implements ListInterface<T>, Iterable<T>
     public ArrayList(int maxSize)
     {
         this.maxSize = maxSize;
-        items = new T[maxSize];
+        items = (T[]) new Object[maxSize];
     }
     
     @Override
@@ -59,7 +59,7 @@ public class ArrayList<T> implements ListInterface<T>, Iterable<T>
     @Override
     public void clear()
     {
-        items = new T[maxSize];
+        items = (T[]) new Object[maxSize];
     }
 
     @Override
