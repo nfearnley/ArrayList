@@ -40,6 +40,7 @@ public class ArrayList<T> implements ListInterface<T>, Iterable<T>
     @Override
     public boolean add(int newPosition, T newEntry)
     {
+        newPosition--;
         if (newEntry == null)
             return false;
         if (isFull())
@@ -113,6 +114,7 @@ public class ArrayList<T> implements ListInterface<T>, Iterable<T>
     @Override
     public T getEntry(int givenPosition)
     {
+        givenPosition--;
         if (givenPosition < 0)
             return null;
         if (givenPosition > numItems - 1)
@@ -142,6 +144,7 @@ public class ArrayList<T> implements ListInterface<T>, Iterable<T>
     @Override
     public T remove(int givenPosition)
     {
+        givenPosition--;
         if (givenPosition < 0)
             return null;
         if (givenPosition > numItems - 1)
@@ -175,6 +178,7 @@ public class ArrayList<T> implements ListInterface<T>, Iterable<T>
     @Override
     public boolean replace(int givenPosition, T newEntry)
     {
+        givenPosition--;
         if (newEntry == null)
             return false;
         if (givenPosition < 0)
@@ -189,6 +193,8 @@ public class ArrayList<T> implements ListInterface<T>, Iterable<T>
     @Override
     public void swap(int positionOne, int positionTwo)
     {
+        positionOne--;
+        positionTwo--;
         if (positionOne < 0)
             return;
         if (positionOne > numItems - 1)
