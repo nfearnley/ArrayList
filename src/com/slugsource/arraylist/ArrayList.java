@@ -11,21 +11,21 @@ import java.util.Iterator;
  *
  * @author Nathan Fearnley
  */
-public class ArrayList implements ListInterface<Object>, Iterable<Object>
+public class ArrayList<T> implements ListInterface<T>, Iterable<T>
 {
 
     int numItems = 0;
     int maxSize;
-    Object[] items;
+    T[] items;
 
     public ArrayList(int maxSize)
     {
         this.maxSize = maxSize;
-        items = new Object[maxSize];
+        items = new T[maxSize];
     }
     
     @Override
-    public boolean add(Object newEntry)
+    public boolean add(T newEntry)
     {
         if (newEntry == null)
             return false;
@@ -38,7 +38,7 @@ public class ArrayList implements ListInterface<Object>, Iterable<Object>
     }
 
     @Override
-    public boolean add(int newPosition, Object newEntry)
+    public boolean add(int newPosition, T newEntry)
     {
         if (newEntry == null)
             return false;
@@ -58,7 +58,7 @@ public class ArrayList implements ListInterface<Object>, Iterable<Object>
     @Override
     public void clear()
     {
-        items = new Object[maxSize];
+        items = new T[maxSize];
     }
 
     @Override
@@ -91,7 +91,7 @@ public class ArrayList implements ListInterface<Object>, Iterable<Object>
     }
 
     @Override
-    public boolean equals(ListInterface<Object> otherList)
+    public boolean equals(ListInterface<T> otherList)
     {
         if (this.getLength() != otherList.getLength())
             return false;
@@ -111,7 +111,7 @@ public class ArrayList implements ListInterface<Object>, Iterable<Object>
     }
 
     @Override
-    public Object getEntry(int givenPosition)
+    public T getEntry(int givenPosition)
     {
         if (givenPosition < 0)
             return null;
@@ -140,14 +140,14 @@ public class ArrayList implements ListInterface<Object>, Iterable<Object>
     }
 
     @Override
-    public Object remove(int givenPosition)
+    public T remove(int givenPosition)
     {
         if (givenPosition < 0)
             return null;
         if (givenPosition > numItems - 1)
             return null;
         
-        Object temp = items[givenPosition];
+        T temp = items[givenPosition];
         shiftDown(givenPosition + 1, numItems - 1);
         items[numItems - 1] = null;
         numItems--;
@@ -173,7 +173,7 @@ public class ArrayList implements ListInterface<Object>, Iterable<Object>
     }
 
     @Override
-    public boolean replace(int givenPosition, Object newEntry)
+    public boolean replace(int givenPosition, T newEntry)
     {
         if (newEntry == null)
             return false;
@@ -198,15 +198,15 @@ public class ArrayList implements ListInterface<Object>, Iterable<Object>
         if (positionTwo > numItems - 1)
             return;
         
-        Object temp = items[positionOne];
+        T temp = items[positionOne];
         items[positionOne] = items[positionTwo];
         items[positionTwo] = temp;
     }
     
     @Override
-    public Iterator<Object> iterator()
+    public Iterator<T> iterator()
     {
-        return new ArrayListIterator(numItems, items);
+        return new ArrayListIterator<T>(numItems, items);
     }
     
 }

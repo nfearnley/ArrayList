@@ -11,13 +11,13 @@ import java.util.NoSuchElementException;
  *
  * @author Nathan Fearnley
  */
-public class ArrayListIterator implements Iterator<Object>
+public class ArrayListIterator<T> implements Iterator<T>
 {
     private int index = -1;
-    private Object[] items;
+    private T[] items;
     private int numItems;
 
-    public ArrayListIterator(int numItems, Object[] items)
+    public ArrayListIterator(int numItems, T[] items)
     {
         this.items = items;
         this.numItems = numItems;
@@ -30,7 +30,7 @@ public class ArrayListIterator implements Iterator<Object>
     }
 
     @Override
-    public Object next()
+    public T next()
     {
         if (!hasNext())
             throw new NoSuchElementException();
