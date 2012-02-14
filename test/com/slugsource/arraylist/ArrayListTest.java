@@ -48,7 +48,7 @@ public class ArrayListTest
         boolean result = instance.add(newEntry);
         assertTrue(result);
         
-        Object getEntry = instance.getEntry(0);
+        Object getEntry = instance.getEntry(1);
         assertEquals(newEntry, getEntry);
     }
     
@@ -69,7 +69,7 @@ public class ArrayListTest
         boolean resultTwo = instance.add(entryTwo);
         assertFalse(resultTwo);
         
-        Object getEntry = instance.getEntry(0);
+        Object getEntry = instance.getEntry(1);
         assertEquals(entryOne, getEntry);
     }
 
@@ -90,16 +90,16 @@ public class ArrayListTest
         boolean resultThree = instance.add(entryThree);
         assertTrue(resultThree);
         
-        boolean resultTwo = instance.add(1, entryTwo);
+        boolean resultTwo = instance.add(2, entryTwo);
         assertTrue(resultTwo);
         
-        Object getEntryOne = instance.getEntry(0);
+        Object getEntryOne = instance.getEntry(1);
         assertEquals(entryOne, getEntryOne);
         
-        Object getEntryTwo = instance.getEntry(1);
+        Object getEntryTwo = instance.getEntry(2);
         assertEquals(entryTwo, getEntryTwo);
         
-        Object getEntryThree = instance.getEntry(2);
+        Object getEntryThree = instance.getEntry(3);
         assertEquals(entryThree, getEntryThree);
     }
 
@@ -238,7 +238,7 @@ public class ArrayListTest
         boolean resultTwoThree = instanceTwo.add(entryThree);
         assertTrue(resultTwoThree);
         
-        boolean resultTwoTwo = instanceTwo.add(1, entryTwo);
+        boolean resultTwoTwo = instanceTwo.add(2, entryTwo);
         assertTrue(resultTwoTwo);
         
         assertTrue(instanceOne.equals(instanceTwo));
@@ -322,7 +322,7 @@ public class ArrayListTest
         boolean result = instance.add(newEntry);
         assertTrue(result);
         
-        Object getEntry = instance.getEntry(0);
+        Object getEntry = instance.getEntry(1);
         assertEquals(newEntry, getEntry);
     }
 
@@ -334,7 +334,7 @@ public class ArrayListTest
     {
         ArrayList instance = new ArrayList(10);
         
-        Object getEntry = instance.getEntry(0);
+        Object getEntry = instance.getEntry(1);
         assertNull(getEntry);
     }
     
@@ -350,7 +350,7 @@ public class ArrayListTest
         boolean result = instance.add(newEntry);
         assertTrue(result);
         
-        Object getEntry = instance.getEntry(1);
+        Object getEntry = instance.getEntry(2);
         assertNull(getEntry);
     }
     
@@ -429,16 +429,16 @@ public class ArrayListTest
         boolean resultThree = instance.add(entryThree);
         assertTrue(resultThree);
         
-        Object removeTwo = instance.remove(1);
+        Object removeTwo = instance.remove(2);
         assertEquals(entryTwo, removeTwo);
         
-        Object getEntryOne = instance.getEntry(0);
+        Object getEntryOne = instance.getEntry(1);
         assertEquals(entryOne, getEntryOne);
         
-        Object getEntryThree = instance.getEntry(1);
+        Object getEntryThree = instance.getEntry(2);
         assertEquals(entryThree, getEntryThree);
         
-        Object getEntryNull = instance.getEntry(2);
+        Object getEntryNull = instance.getEntry(3);
         assertNull(getEntryNull);
     }
 
@@ -463,16 +463,16 @@ public class ArrayListTest
         boolean resultThree = instance.add(entryThree);
         assertTrue(resultThree);
         
-        boolean replace = instance.replace(1, entryFour);
+        boolean replace = instance.replace(2, entryFour);
         assertTrue(replace);
         
-        Object getEntryOne = instance.getEntry(0);
+        Object getEntryOne = instance.getEntry(1);
         assertEquals(entryOne, getEntryOne);
         
-        Object getEntryFour = instance.getEntry(1);
+        Object getEntryFour = instance.getEntry(2);
         assertEquals(entryFour, getEntryFour);
         
-        Object getEntryThree = instance.getEntry(2);
+        Object getEntryThree = instance.getEntry(3);
         assertEquals(entryThree, getEntryThree);
     }
 
@@ -496,15 +496,15 @@ public class ArrayListTest
         boolean resultThree = instance.add(entryThree);
         assertTrue(resultThree);
         
-        instance.swap(1, 2);
+        instance.swap(2, 3);
         
-        Object getEntryOne = instance.getEntry(0);
+        Object getEntryOne = instance.getEntry(1);
         assertEquals(entryOne, getEntryOne);
         
-        Object getEntryThree = instance.getEntry(1);
+        Object getEntryThree = instance.getEntry(2);
         assertEquals(entryThree, getEntryThree);
         
-        Object getEntryTwo = instance.getEntry(2);
+        Object getEntryTwo = instance.getEntry(3);
         assertEquals(entryTwo, getEntryTwo);
     }
 

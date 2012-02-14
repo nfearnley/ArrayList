@@ -99,7 +99,7 @@ public class ArrayList<T> implements ListInterface<T>, Iterable<T>
         
         boolean result = true;
         
-        for (int x = 0; x < this.getLength(); x++)
+        for (int x = 1; x <= this.getLength(); x++)
         {
             if (!this.getEntry(x).equals(otherList.getEntry(x)))
             {
